@@ -1,96 +1,98 @@
 import './App.css';
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { IternalTheme } from './IternalTheme'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
-
-const theme = createMuiTheme({
-  palette: {
-    common: {
-      black: '#222',
-      white: '#fff',
-    },
-    type: 'light',
-    primary: {
-      light: '#0a2156',
-      main: '#0a2156',
-      dark: '#0a2156',
-      contrastTest: '#fff',
-    },
-    secondary: {
-      light: '#e0a614',
-      main: '#e0a614',
-      dark: '#e0a614',
-      contrastTest: '#000',
-    },
-    error: {
-      light: '#a30707',
-      main: '#a30707',
-      dark: '#a30707',
-      contrastTest: '#fff',
-    },
-    warning: {
-      light: '#e26713',
-      main: '#e26713',
-      dark: '#e26713',
-      contrastTest: '#000',
-    },
-    info: {
-      light: '#1d6a91',
-      main: '#1d6a91',
-      dark: '#1d6a91',
-      contrastTest: '#000',
-    },
-    success: {
-      light: '#0bafaa',
-      main: '#0bafaa',
-      dark: '#0bafaa',
-      contrastTest: '#000',
-    }
-  },
-});
+const theme = createMuiTheme(IternalTheme);
 
 function App() {
-
+  console.log(theme.palette.primary.contrastText)
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <h1>Stefan's CRA-MUI Themed Test</h1>
-      <p>This is hopefully where I'll put some magic lmao</p>
-      <div>
-      <Button variant="contained" color="primary">
-        Primary Contained
-      </Button>
-      
-      <Button variant="outlined" color="primary">
-        Primary Outlined
-      </Button>
-      <br/>
-      <Button variant="contained" color="secondary">
-        Secondary Contained
+      <ThemeProvider theme={theme}>
+        <div>
+          <Typography variant="h1" component="h2" gutterBottom>
+            h1. Heading
+      </Typography>
+          <Typography variant="h2" gutterBottom>
+            h2. Heading
+      </Typography>
+          <Typography variant="h3" gutterBottom>
+            h3. Heading
+      </Typography>
+          <Typography variant="h4" gutterBottom>
+            h4. Heading
+      </Typography>
+          <Typography variant="h5" gutterBottom>
+            h5. Heading
+      </Typography>
+          <Typography variant="h6" gutterBottom>
+            h6. Heading
+      </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+      </Typography>
+          <Typography variant="subtitle2" gutterBottom>
+            subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+      </Typography>
+          <Typography variant="body1" gutterBottom>
+            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+            unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
+            dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+      </Typography>
+          <Typography variant="body2" gutterBottom>
+            body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+            unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
+            dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+      </Typography>
+          <Typography variant="button" display="block" gutterBottom>
+            button text
+      </Typography>
+          <Typography variant="caption" display="block" gutterBottom>
+            caption text
+      </Typography>
+          <Typography variant="overline" display="block" gutterBottom>
+            overline text
+      </Typography>
+        </div>
+
+        <div>
+          <br />
+          <Button loading variant="contained" color="primary">
+            Primary Contained
       </Button>
 
-      <Button variant="outlined" color="secondary">
-        Secondary Outlined
+          <Button variant="outlined" color="primary">
+            Primary Outlined
       </Button>
-      <br/>
-      <Button variant="contained">Default</Button>
-      <Button variant="contained" disabled>
-        Disabled
+          <br />
+          <Button variant="contained" color="secondary">
+            Secondary Contained
       </Button>
-      </div>
+
+          <Button variant="outlined" color="secondary">
+            Secondary Outlined
+      </Button>
+          <br />
+          <Button variant="contained">Default</Button>
+          <Button variant="contained" disabled>
+            Disabled
+      </Button>
+        </div>
 
 
-      <br/>
-      <br/>
-      <br/>
-      <form noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Standard" />
-      <br/>
-      <TextField id="filled-basic" label="Filled" variant="filled" />
-      <br/>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-    </form>
+        <br />
+        <br />
+        <br />
+        <form noValidate autoComplete="off">
+          <TextField id="standard-basic" label="Standard" />
+          <br />
+          <TextField id="filled-basic" label="Filled" variant="filled" />
+          <br />
+          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        </form>
       </ThemeProvider>
     </>
   );
