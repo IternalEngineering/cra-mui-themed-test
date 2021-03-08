@@ -60,18 +60,18 @@ function App() {
 
         <div>
           <br />
-          <Button loading variant="contained" color="primary">
+          <Button disableElevation variant="contained" color="primary">
             Primary Contained
       </Button>
 
-          <Button variant="outlined" color="primary">
+          <Button disableElevation variant="outlined" color="primary">
             Primary Outlined
       </Button>
           <br />
-          <Button variant="contained" color="secondary">
+          <Button disableElevation variant="contained" color="secondary">
             Secondary Contained
       </Button>
-          <Button variant="outlined" color="secondary">
+          <Button disableElevation variant="outlined" color="secondary">
             Secondary Outlined
       </Button>
           <br /><br />
@@ -80,9 +80,9 @@ function App() {
           <MuiAlert severity="info">This is an information message!</MuiAlert>
           <MuiAlert severity="success">This is a success message!</MuiAlert>
           <br />
-          <Button variant="contained">Default</Button>
+          <Button disableElevation variant="contained">Default</Button>
           <br />
-          <Button variant="contained" disabled>
+          <Button disableElevation variant="contained" disabled>
             Disabled
       </Button>
         </div>
