@@ -4,11 +4,11 @@ import { IternalTheme } from './IternalTheme'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import MuiAlert from '@material-ui/lab/Alert';
 
 const theme = createMuiTheme(IternalTheme);
 
 function App() {
-  console.log(theme.palette.primary.contrastText)
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -71,12 +71,17 @@ function App() {
           <Button variant="contained" color="secondary">
             Secondary Contained
       </Button>
-
           <Button variant="outlined" color="secondary">
             Secondary Outlined
       </Button>
+          <br /><br />
+          <MuiAlert severity="error">This is an error message!</MuiAlert>
+          <MuiAlert severity="warning">This is a warning message!</MuiAlert>
+          <MuiAlert severity="info">This is an information message!</MuiAlert>
+          <MuiAlert severity="success">This is a success message!</MuiAlert>
           <br />
           <Button variant="contained">Default</Button>
+          <br />
           <Button variant="contained" disabled>
             Disabled
       </Button>
@@ -87,11 +92,11 @@ function App() {
         <br />
         <br />
         <form noValidate autoComplete="off">
-          <TextField id="standard-basic" label="Standard" />
+          <TextField label="Standard" />
           <br />
-          <TextField id="filled-basic" label="Filled" variant="filled" />
+          <TextField label="Filled" variant="filled" />
           <br />
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+          <TextField label="Outlined" variant="outlined" />
         </form>
       </ThemeProvider>
     </>
